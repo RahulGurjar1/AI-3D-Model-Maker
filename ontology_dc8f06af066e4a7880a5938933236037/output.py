@@ -11,6 +11,8 @@ from openfabric_pysdk.utility import SchemaUtil
 @dataclass
 class OutputClass:
     message: str = None
+    image_path: str = None
+    model_path: str = None
 
 
 ################################################################
@@ -18,6 +20,8 @@ class OutputClass:
 ################################################################
 class OutputClassSchema(Schema):
     message = fields.Str(allow_none=True)
+    image_path = fields.Str(allow_none=True)
+    model_path = fields.Str(allow_none=True)
 
     @post_load
     def create(self, data, **kwargs):
